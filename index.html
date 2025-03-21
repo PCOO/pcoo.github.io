@@ -8,9 +8,11 @@ description: "品牌咨询, Brand Consulting Services, The MeMeCat, Graphic Desi
 
 <style>
 /* 自定义光标的 SVG 数据 URL */
-:root {
-    --cursor-left: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='144' height='144' viewBox='0 0 24 24' fill='none' stroke='%23FBF604' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 18l-6-6 6-6'/%3E%3C/svg%3E") 72 72, auto;
-    --cursor-right: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='144' height='144' viewBox='0 0 24 24' fill='none' stroke='%23FBF604' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 18l6-6-6-6'/%3E%3C/svg%3E") 72 72, auto;
+.cursor-left {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='144' height='144' viewBox='0 0 24 24' fill='none' stroke='%23FBF604' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 18l-6-6 6-6'/%3E%3C/svg%3E") 72 72, auto !important;
+}
+.cursor-right {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='144' height='144' viewBox='0 0 24 24' fill='none' stroke='%23FBF604' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 18l6-6-6-6'/%3E%3C/svg%3E") 72 72, auto !important;
 }
 
 .carousel {
@@ -18,7 +20,6 @@ description: "品牌咨询, Brand Consulting Services, The MeMeCat, Graphic Desi
     height: 40vh;
     overflow: hidden;
     position: relative;
-    cursor: default;
     border-radius: 1.5rem;
     transform: translateZ(0);
 }
@@ -93,11 +94,9 @@ description: "品牌咨询, Brand Consulting Services, The MeMeCat, Graphic Desi
 }
 .carousel-nav-left {
     left: 0;
-    cursor: var(--cursor-left);
 }
 .carousel-nav-right {
     right: 0;
-    cursor: var(--cursor-right);
 }
 .carousel-counter {
     position: absolute;
@@ -122,8 +121,8 @@ description: "品牌咨询, Brand Consulting Services, The MeMeCat, Graphic Desi
                     <h5>{{ item.title }}</h5>
                     <p>{{ item.description }}</p>
                 </div>
-                <div class="carousel-nav-left" onclick="$('#heroCarousel').carousel('prev')"></div>
-                <div class="carousel-nav-right" onclick="$('#heroCarousel').carousel('next')"></div>
+                <div class="carousel-nav-left cursor-left" onclick="$('#heroCarousel').carousel('prev')"></div>
+                <div class="carousel-nav-right cursor-right" onclick="$('#heroCarousel').carousel('next')"></div>
             </div>
             {% endfor %}
         </div>
