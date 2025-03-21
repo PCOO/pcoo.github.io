@@ -7,6 +7,12 @@ description: "品牌咨询, Brand Consulting Services, The MeMeCat, Graphic Desi
 ---
 
 <style>
+/* 自定义光标的 SVG 数据 URL */
+:root {
+    --cursor-left: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 24 24' fill='none' stroke='%23FBF604' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 18l-6-6 6-6'/%3E%3C/svg%3E") 24 24, auto;
+    --cursor-right: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 24 24' fill='none' stroke='%23FBF604' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 18l6-6-6-6'/%3E%3C/svg%3E") 24 24, auto;
+}
+
 .carousel {
     margin-bottom: 2rem;
     height: 40vh;
@@ -73,7 +79,7 @@ description: "品牌咨询, Brand Consulting Services, The MeMeCat, Graphic Desi
     font-size: 2rem;
     margin-bottom: 0;
     color: white;
-    font-weight: 550;
+    font-weight: 500;
     font-family: manrope;
 }
 .carousel-nav-left, .carousel-nav-right {
@@ -85,11 +91,11 @@ description: "品牌咨询, Brand Consulting Services, The MeMeCat, Graphic Desi
 }
 .carousel-nav-left {
     left: 0;
-    cursor: w-resize;
+    cursor: var(--cursor-left);
 }
 .carousel-nav-right {
     right: 0;
-    cursor: e-resize;
+    cursor: var(--cursor-right);
 }
 .carousel-counter {
     position: absolute;
@@ -98,7 +104,7 @@ description: "品牌咨询, Brand Consulting Services, The MeMeCat, Graphic Desi
     color: white;
     font-size: 3rem;
     z-index: 2;
-    font-weight: 400;
+    font-weight: 450;
     font-family: manrope;
 }
 </style>
