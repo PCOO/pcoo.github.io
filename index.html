@@ -14,6 +14,7 @@ description: "品牌咨询, Brand Consulting Services, The MeMeCat, Graphic Desi
     position: relative;
     cursor: default;
     border-radius: 1.5rem;
+    transform: translateZ(0);
 }
 .carousel-inner {
     height: 100%;
@@ -41,6 +42,7 @@ description: "品牌咨询, Brand Consulting Services, The MeMeCat, Graphic Desi
     width: 100%;
     height: 100%;
     border-radius: 1.5rem;
+    transition: transform 0.6s ease-in-out;
 }
 .carousel-caption {
     position: absolute;
@@ -51,19 +53,27 @@ description: "品牌咨询, Brand Consulting Services, The MeMeCat, Graphic Desi
     padding: 0;
     max-width: 80%;
     z-index: 2;  /* 确保文字在遮罩层之上 */
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.8s ease-in-out;
+    transition-delay: 0.3s;
+}
+.carousel-item.active .carousel-caption {
+    opacity: 1;
+    transform: translateX(0);
 }
 .carousel-caption h5 {
     font-size: 3rem;
     margin-bottom: 0.5rem;
     color: #FBF604;
-    font-weight: 400;
+    font-weight: 550;
     font-family: manrope;
 }
 .carousel-caption p {
     font-size: 2rem;
     margin-bottom: 0;
     color: white;
-    font-weight: 400;
+    font-weight: 550;
     font-family: manrope;
 }
 .carousel-nav-left, .carousel-nav-right {
@@ -126,6 +136,17 @@ document.addEventListener('DOMContentLoaded', function() {
     carousel.on('slid.bs.carousel', function() {
         var activeIndex = carousel.find('.carousel-item.active').index() + 1;
         currentSlide.text(activeIndex);
+    });
+
+    // 添加视差滚动效果
+    window.addEventListener('scroll', function() {
+        var scrolled = window.pageYOffset;
+        var carouselImages = document.querySelectorAll('.carousel-item img');
+        
+        carouselImages.forEach(function(img) {
+            var translateY = scrolled * 0.3; // 调整这个值可以改变视差效果的强度
+            img.style.transform = 'translateY(' + translateY + 'px)';
+        });
     });
 });
 </script>
