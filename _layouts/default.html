@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{page.title}} - {{site.name}}</title>
+
+    {% seo %}
+
+    <link rel="shortcut icon" type="image/x-icon" href="{{site.baseurl}}/{{site.favicon}}">
+    
+    
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <!-- Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
+
+    <!-- Bootstrap Modified -->
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css">
+
+    <!-- Theme Stylesheet -->
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/theme.css">
+
+    <!-- Jquery on header to make sure everything works, the rest  of the scripts in footer for fast loading -->
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+    {% include tracking-header.html %}
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5RD2GJWHRX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5RD2GJWHRX');
+</script>
+<style>
+    @media only screen and (min-width: 768px) {
+    body {
+            zoom: 130%;
+        }
+    }
+    
+    body {
+        background-color: #f0f0f0; /* 这里的颜色代码代表浅灰色*/
+    }
+    
+    @font-face {
+        font-family: "manrope";
+        src: url("/assets/manrope.ttf");
+    }
+
+    
+/* CSS样式用于通知栏和返回顶部按钮 */
+        .contact-notification {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(250, 245, 4, 0.95); /* 设置背景为半透明白色，0.9表示90%不透明 */
+            backdrop-filter: blur(8px); /* 添加高斯模糊效果 */
+            color: #000000; /* 设置文字颜色为深色 */
+            padding: 10px;
+            text-align: left; /* 文本左对齐 */
+            z-index: 999;
+            border-top: 2px solid #333; /* 添加淡灰色细边框 */
+            border-left: 1px solid #333;
+            border-right: 1px solid #333;
+            overflow: hidden; /* 隐藏溢出的内容 */
+        }
+        .contact-notification a {
+            color: #333333; /* 设置超链接颜色 */
+            text-decoration: none; /* 去除超链接下划线 */
+        }
+        .contact-notification a:hover {
+            color: #333; /* 设置超链接高亮颜色为深灰色 */
+        }
+        .contact-notification p {
+            font-size: 100%; /* 将文字放大一倍 */
+        }
+
+    /* 使用媒体查询来定义只在手机端显示通知栏的样式 */
+        @media (max-width: 768px) {
+            .contact-notification {
+                display: block; /* 在小屏幕上显示通知栏 */
+            }
+            .mobile-only {
+                display: block;
+            }
+        }
+
+        /* 使用媒体查询来定义只在电脑端隐藏通知栏的样式 */
+        @media (min-width: 769px) {
+            .contact-notification {
+                display: none; /* 在大屏幕上隐藏通知栏 */
+            }
+            .mobile-only {
+                display: none;
+            }
+        }
+    
+    
+    p {
+            color: #FAF504;
+        }
+
+h1, h2, h3, h4 {
+            color: #FAF504;
+        }
+    body {
+            background-color: #000000; /* 设置背景颜色为蓝黑色 */
+        }
+
+   
+   #box{width:100%;display: flex; height: 100px;margin: 6px;}
+    #left_box,#right_box{width: 170px;height: 100px; margin: 6px;}
+    #center_box{ flex:1; height: 100px;margin: 4px;}
+
+       /* 默认样式，适用于所有设备 */
+    #desktopLineBreak {
+      display: none; /* 隐藏换行 */
+    }
+     /* 在大屏幕（电脑）上显示换行 */
+    @media (min-width: 768px) {
+      #desktopLineBreak {
+        display: block; /* 显示换行 */
+      }
+    }
+
+            h1.hero-text {
+                font-size: 52px;
+            }
+
+        /* 对于PC设备，文字大小为... */
+        @media screen and (min-width: 600px) {
+            h1.hero-text {
+                font-size: 80px;
+            }
+        }
+    
+
+
+
+        /* 默认情况下隐藏h1内容 */
+        h1.desktop-only {
+            display: none;
+        }
+
+        /* 当屏幕宽度大于等于768px（一般是平板或桌面端）时显示h1内容 */
+        @media (min-width: 768px) {
+            h1.desktop-only {
+                display: block;
+            }
+        }
+
+     /* 默认情况下隐藏div内容 */
+        div.desktop-only {
+            display: none;
+        }
+
+        /* 当屏幕宽度大于等于768px（一般是平板或桌面端）时显示div内容 */
+        @media (min-width: 768px) {
+            div.desktop-only {
+                display: block;
+            }
+        }
+
+
+    
+</style>
+</head>
+
+<body class="{% if page.url == "/" %} homefirstpage {% endif %}">
+
+    <!-- 通知栏内容，显示联系方式 -->
+<div class="contact-notification" id="contact-notification">
+        <h6 style="font-family:manrope;">(C)TheMeMeCat - Shenzhen &amp; London</h6>
+         <h4 style="font-family:manrope;"><a href="/assets/images/wechat.jpg" target="_blank">
+             WeChat: MeMeCat<br>
+             <h4 style="font-family:manrope;"><a href="https://t.me/thememecat" target="_blank">
+             Telegram: @TheMeMeCat
+             </a></h4>
+    </div>
+    
+    <!-- Navbar -->
+    <nav id="MagicMenu" class="topnav navbar navbar-expand-lg navbar-light bg-black fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+<img src="/assets/images/thememecat.svg" alt="Hey!" width="80" height="50">
+        </a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+       <span><img src="/assets/images/expend.svg" width="32" height="32"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="navbarColor02" style="">
+            
+            <ul class="navbar-nav mr-auto d-flex align-items-left">
+                
+               {% include menu-header.html %}
+                    
+            </ul>
+            
+        </div>
+    </div>
+    </nav>
+
+
+    <!-- Content -->
+    
+    
+    <main role="main" class="site-content">
+        {{ content }}
+    </main>
+
+
+    <!-- Scripts: popper, bootstrap, theme, lunr -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+    <script src="{{site.baseurl}}/assets/js/theme.js"></script>
+
+
+    <!-- Footer -->
+    <br><br><br>
+ 
+<div class="desktop-only">
+<footer style="border-top: 1px solid yellow;" >
+    <br>
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+            <img src="/assets/images/thememecat_horizon.svg" width="207" height="50" alt="TheMeMeCat Logo">
+        </div>
+        <div>
+            <h4>TheMeMeCat © <span id="current-year"></span></h4>
+        </div>
+    </div>
+</footer>
+</div>
+<script>
+    // 动态插入当前年份
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
+
+</footer>
+             
+    {% include tracking-footer.html %}
+
+
+</body>
+
+</html>

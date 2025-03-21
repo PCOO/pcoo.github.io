@@ -1,0 +1,109 @@
+---
+title: "I'm MeMeCat"
+layout: default
+pagination:
+    enabled: true
+description: "品牌咨询, Brand Consulting Services, The MeMeCat, Graphic Design"
+---
+
+
+<div class="container">
+    
+{% if page.url == "/" %}
+    
+
+<!-- Begin post excerpts, let's highlight the first 4 posts on top -->
+<div class="row remove-site-content-margin">
+
+    <div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
+        <div id="desktopLineBreak">
+        
+    </div>
+    
+    <h1 class="hero-text" style="font-family:manrope;">
+Makes your brand</br> more <u>apealing</u>, it become so <u>credible</u>.</br>
+    </h1>
+   
+        
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var targetSection = document.getElementById("target-section");
+        if (targetSection) {
+            targetSection.scrollIntoView({ behavior: "smooth" });
+        }
+    });
+</script>
+        
+<div id="desktopLineBreak">
+</br>
+    </div>
+    <div id = "box">
+    <div id = "left_box">
+    <h4 style="font-family:manrope;">
+    Our designs geared to transform enterprise. 
+    </h4></div>
+
+    <div id = "center_box">
+    <h4 style="font-family:manrope;">
+    Trusted by  </br>
+        100+ </br>
+    businesses & 
+         </br>
+        individuals.
+    </h4></div>
+        <div id = "right_box" class="desktop-only">
+    <h1 style="font-family:manrope;" class="desktop-only"><a href="/work" style="color: #FBF604;text-decoration:underline;">
+         </br>
+    ENTER&#8594;
+    </a></h1></div>
+    </div>
+        
+    </br> </br> </br> </br> </br> 
+                  <!-- second latest post -->
+        
+        
+        <!-- third latest post -->
+    
+        <!-- fourth latest post -->
+        
+<!-- Sticky - add sticky tag to the post you want to highlight here - tags: [sticky] -->
+{% for post in site.posts %} 
+{% if post.tags contains "sticky" %}
+<div class="jumbotron jumbotron-fluid jumbotron-home pt-0 pb-0 mt-3 mb-2rem bg-lightblue position-relative">
+    <div class="pl-4 pr-0 h-100 tofront">
+        <div class="row justify-content-between">
+            <div class="col-md-6 pt-6 pb-6 pr-lg-4 align-self-center">
+                <h1 class="mb-3" style="font-family:manrope;">{{post.title}}</h1>
+                <p class="mb-3 lead">
+                    {{ post.excerpt | strip_html | strip_newlines | truncate: 136 }}
+                </p>
+                <a href="{{site.baseurl}}{{post.url}}" class="btn btn-dark">Read More</a>
+            </div>
+            <div class="col-md-6 d-none d-md-block pr-0" style="background-size:cover;background-image:url({{site.baseurl}}/{{ post.image }});">	
+            </div>
+        </div>
+    </div>
+</div> 
+{% endif %}
+{% endfor %}
+
+
+    
+
+
+{% endif %} <!--endif page url is / -->
+
+<img src="/assets/images/global_trans.svg">
+<h1 class="hero-text">3 CONTINENTS</h1>
+        <br>
+<h1 class="hero-text">8 COUNTRIES / REGIONS</h1>
+<!-- Now the rest of the posts with the usual loop but with an offset:4 on the first page so we can skeep the first 4 posts displayed above -->
+</br>
+
+
+
+
+</div>
+
+
+</div>

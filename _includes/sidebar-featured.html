@@ -1,0 +1,21 @@
+<div class="sticky-top sticky-top-offset">
+    
+    <h1 style="font-family:manrope;">近来</br>Lastest </h1>
+
+</br></br>
+    <ol class="list-featured">				
+        {% for post in site.tags.featured %}                
+            
+            <span>
+               
+                <h2>
+                    <a href="{{site.baseurl}}{{ post.url }}" style="color: #FBF604;">{{ post.title }}</a>
+                </h2>
+              
+                </span>
+            </span>
+            </li> 
+        </br>
+        {% endfor %}   
+    </ol>
+</div> 
