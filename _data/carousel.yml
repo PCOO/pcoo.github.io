@@ -1,17 +1,17 @@
 items:
-  - image: thememecat_1.jpg
-    title: 品牌设计
+  - image: heypoke_1.svg
+    title: HeyPoke
     description: 创造独特的品牌视觉体验
-    alt: The MeMeCat
-  - image: atomlantis_1.jpg
-    title: 产品设计
+    alt: 
+  - image: omni_1.svg
+    title: OMNI
     description: 打造完美的用户体验
     alt: Atomlantis
-  - image: nice_2.jpg
+  - image: lwsec_3.svg
     title: 创意设计
     description: 突破传统的创意表现
     alt: Nice Project
-  - image: uni_1.jpg
+  - image: global.svg
     title: 界面设计
     description: 精致的用户界面设计
     alt: UI Design 
