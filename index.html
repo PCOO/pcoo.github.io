@@ -21,6 +21,15 @@ description: "品牌咨询, Brand Consulting Services, The MeMeCat, Graphic Desi
     height: 100%;
     position: relative;
 }
+.carousel-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);  /* 这里设置遮罩层，0.2的透明度使图片显示为80%透明度 */
+}
 .carousel-item img {
     object-fit: cover;
     width: 100%;
@@ -34,6 +43,7 @@ description: "品牌咨询, Brand Consulting Services, The MeMeCat, Graphic Desi
     text-align: left;
     padding: 0;
     max-width: 80%;
+    z-index: 2;  /* 确保文字在遮罩层之上 */
 }
 .carousel-caption h5 {
     font-size: 3rem;
@@ -50,7 +60,7 @@ description: "品牌咨询, Brand Consulting Services, The MeMeCat, Graphic Desi
     top: 0;
     bottom: 0;
     width: 50%;
-    z-index: 1;
+    z-index: 3;  /* 确保导航区域在最上层 */
 }
 .carousel-nav-left {
     left: 0;
@@ -66,7 +76,7 @@ description: "品牌咨询, Brand Consulting Services, The MeMeCat, Graphic Desi
     right: 2rem;
     color: white;
     font-size: 1rem;
-    z-index: 2;
+    z-index: 2;  /* 确保页码在遮罩层之上 */
 }
 </style>
 
