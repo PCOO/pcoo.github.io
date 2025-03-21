@@ -11,12 +11,15 @@ description: "品牌咨询, Brand Consulting Services, The MeMeCat, Graphic Desi
     margin-bottom: 2rem;
     height: 40vh;
     overflow: hidden;
+    position: relative;
+    cursor: default;
 }
 .carousel-inner {
     height: 100%;
 }
 .carousel-item {
     height: 100%;
+    position: relative;
 }
 .carousel-item img {
     object-fit: cover;
@@ -24,19 +27,52 @@ description: "品牌咨询, Brand Consulting Services, The MeMeCat, Graphic Desi
     height: 100%;
 }
 .carousel-caption {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 10px;
+    position: absolute;
+    left: 2rem;
+    bottom: 2rem;
+    right: auto;
+    text-align: left;
+    padding: 0;
+    max-width: 80%;
+}
+.carousel-caption h5 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+.carousel-caption p {
+    font-size: 1rem;
+    margin-bottom: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+.carousel-nav-left, .carousel-nav-right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    z-index: 1;
+}
+.carousel-nav-left {
+    left: 0;
+    cursor: w-resize;
+}
+.carousel-nav-right {
+    right: 0;
+    cursor: e-resize;
+}
+.carousel-counter {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    color: white;
+    font-size: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    z-index: 2;
 }
 </style>
 
 <div class="container-fluid px-0">
-    <div id="heroCarousel" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            {% for item in site.data.carousel.items %}
-            <li data-target="#heroCarousel" data-slide-to="{{ forloop.index0 }}" {% if forloop.first %}class="active"{% endif %}></li>
-            {% endfor %}
-        </ol>
+    <div id="heroCarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
         <div class="carousel-inner">
             {% for item in site.data.carousel.items %}
             <div class="carousel-item {% if forloop.first %}active{% endif %}">
@@ -45,19 +81,29 @@ description: "品牌咨询, Brand Consulting Services, The MeMeCat, Graphic Desi
                     <h5>{{ item.title }}</h5>
                     <p>{{ item.description }}</p>
                 </div>
+                <div class="carousel-nav-left" onclick="$('#heroCarousel').carousel('prev')"></div>
+                <div class="carousel-nav-right" onclick="$('#heroCarousel').carousel('next')"></div>
             </div>
             {% endfor %}
         </div>
-        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#heroCarousel" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
+        <div class="carousel-counter">
+            <span class="current-slide">1</span>/<span class="total-slides">{{ site.data.carousel.items | size }}</span>
+        </div>
     </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var carousel = document.getElementById('heroCarousel');
+    var currentSlide = carousel.querySelector('.carousel-counter .current-slide');
+    
+    // 更新页码显示
+    carousel.addEventListener('slid.bs.carousel', function() {
+        var activeIndex = $(this).find('.active').index() + 1;
+        currentSlide.textContent = activeIndex;
+    });
+});
+</script>
 
 <div class="container">
     
