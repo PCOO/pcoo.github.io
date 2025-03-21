@@ -36,14 +36,14 @@ description: "品牌咨询, Brand Consulting Services, The MeMeCat, Graphic Desi
     max-width: 80%;
 }
 .carousel-caption h5 {
-    font-size: 1.5rem;
+    font-size: 3rem;
     margin-bottom: 0.5rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    color: #FBF604;
 }
 .carousel-caption p {
-    font-size: 1rem;
+    font-size: 2rem;
     margin-bottom: 0;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    color: white;
 }
 .carousel-nav-left, .carousel-nav-right {
     position: absolute;
@@ -66,7 +66,6 @@ description: "品牌咨询, Brand Consulting Services, The MeMeCat, Graphic Desi
     right: 2rem;
     color: white;
     font-size: 1rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     z-index: 2;
 }
 </style>
@@ -94,13 +93,16 @@ description: "品牌咨询, Brand Consulting Services, The MeMeCat, Graphic Desi
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    var carousel = document.getElementById('heroCarousel');
-    var currentSlide = carousel.querySelector('.carousel-counter .current-slide');
+    var carousel = $('#heroCarousel');
+    var currentSlide = carousel.find('.carousel-counter .current-slide');
     
-    // 更新页码显示
-    carousel.addEventListener('slid.bs.carousel', function() {
-        var activeIndex = $(this).find('.active').index() + 1;
-        currentSlide.textContent = activeIndex;
+    // 初始化页码显示
+    currentSlide.text('1');
+    
+    // 监听轮播图切换事件
+    carousel.on('slid.bs.carousel', function() {
+        var activeIndex = carousel.find('.carousel-item.active').index() + 1;
+        currentSlide.text(activeIndex);
     });
 });
 </script>
