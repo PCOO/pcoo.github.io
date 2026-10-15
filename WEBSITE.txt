@@ -1,0 +1,55 @@
+NUCLEAR WEBSITE
+
+Entry point: index.html (GitHub Pages / Jekyll)
+Jekyll config: _config.yml
+Reusable latest-work component: _includes\featured-works.html
+Work article layout: _layouts\work.html
+
+ADDING A FEATURED WORK
+1. Duplicate one file in _works\ and give it a unique lowercase filename.
+2. Update the YAML front matter: title, date, category, image, image_alt and summary.
+3. Write the project article below the second --- using Markdown.
+4. Commit and push. GitHub Pages builds the article automatically.
+
+The homepage sorts the works collection by date and displays the latest three.
+The mobile menu and footer use the same include, so their titles, images, order
+and links always stay synchronized. On desktop the footer is a three-column row;
+on mobile both displays use a vertical list.
+
+LOCAL JEKYLL PREVIEW
+The github-pages bundle uses Jekyll 3 and Liquid 4. For a local preview, use
+Ruby 3.1.x with Devkit; Ruby 4 is currently incompatible with this Liquid
+version. From this directory, run:
+  bundle install
+  bundle exec jekyll serve
+Then open http://127.0.0.1:4000/
+
+GITHUB PAGES
+Push the directory to a GitHub repository and choose GitHub Actions or
+"Deploy from a branch" under Settings > Pages. The github-pages dependency in
+Gemfile follows the versions supported by GitHub Pages. Hosting for public
+repositories is generally available without a separate Jekyll hosting charge;
+a custom domain, if used, is purchased separately from a domain registrar.
+Check GitHub's current plan and usage terms before publishing.
+
+CONTENT CHECKLIST
+- The three starter articles use neutral study labels and placeholder copy.
+  Replace them with verified project names, credits, process and outcomes.
+- Confirm the retained "Trusted by 200+ businesses & individuals" statement.
+- Confirm footer copyright and social/contact links before publishing.
+- Contact address previously provided by the site owner:
+  contact@nuclearlabs.design.
+- No backend, analytics, tracking or fabricated testimonials are included.
+
+ASSETS
+Optimized JPEG covers are stored in works\optimized. Keep article images in the
+repository and reference them with a root path such as /works/optimized/43.jpg.
+The original artwork remains untouched.
+
+VALIDATION
+The Jekyll collection, shared include, front matter, newest-three sorting,
+responsive desktop/mobile CSS, referenced cover files and HTML tag balance were
+checked locally. Ruby 4.0.7 was available, but Jekyll's Liquid 4 dependency
+fails on Ruby 4 because the removed tainted? method is still used. Use Ruby
+3.1.x for a complete local build, or rely on GitHub Pages' supported build
+environment.

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="{{ page.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }} · {{ site.title }}</title>
+  <meta name="description" content="{{ page.description | escape }}">
+  <style>
+    * { box-sizing: border-box; }
+    html { background: #000; color: #fff; font-family: Arial, Helvetica, sans-serif; }
+    body { margin: 0; }
+    a { color: inherit; }
+    .work-header, .work-content { width: min(100% - 2rem, 980px); margin-inline: auto; }
+    .work-header { padding-block: 1.5rem 4rem; }
+    .work-home { text-decoration: none; }
+    .work-category { margin: 6rem 0 1rem; color: #a1ff00; }
+    h1 { max-width: 13ch; margin: 0; font-size: clamp(3rem, 9vw, 7rem); line-height: .92; letter-spacing: -.06em; }
+    .work-cover { display: block; width: 100%; max-height: 80vh; object-fit: cover; }
+    .work-content { padding-block: 4rem 8rem; font-size: clamp(1.1rem, 2vw, 1.45rem); line-height: 1.55; }
+    .work-content > * { max-width: 760px; }
+    .work-content img { max-width: 100%; height: auto; }
+  </style>
+</head>
+<body>
+  <header class="work-header">
+    <a class="work-home" href="{{ '/' | relative_url }}">Nuclear</a>
+    <p class="work-category">{{ page.category }}</p>
+    <h1>{{ page.title }}</h1>
+  </header>
+  <img class="work-cover" src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title | escape }}">
+  <main class="work-content">{{ content }}</main>
+</body>
+</html>

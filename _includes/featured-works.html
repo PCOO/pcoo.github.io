@@ -1,0 +1,15 @@
+{% assign featured_works = site.works | sort: "date" | reverse | slice: 0, 3 %}
+<div class="featured-works featured-works--{{ include.context }}" aria-label="Latest featured work">
+  {% for work in featured_works %}
+    <a class="featured-work" href="{{ work.url | relative_url }}">
+      <img class="featured-work__image" src="{{ work.image | relative_url }}" alt="{{ work.image_alt | default: work.title | escape }}" loading="lazy">
+      <span class="featured-work__content">
+        <span class="featured-work__category">{{ work.category }}</span>
+        <span class="featured-work__title">{{ work.title }}</span>
+      </span>
+      <svg class="featured-work__arrow" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M5 12h13M13 6l6 6-6 6"/>
+      </svg>
+    </a>
+  {% endfor %}
+</div>

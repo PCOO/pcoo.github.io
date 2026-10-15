@@ -1,0 +1,17 @@
+title: Nuclear
+url: ""
+baseurl: ""
+markdown: kramdown
+collections:
+  works:
+    output: true
+    permalink: /work/:name/
+defaults:
+  - scope:
+      path: ""
+      type: works
+    values:
+      layout: work
+exclude:
+  - README.md
+  - WEBSITE.txt
