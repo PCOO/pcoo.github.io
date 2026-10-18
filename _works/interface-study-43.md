@@ -1,6 +1,7 @@
 ---
 title: Interface Study 43
 date: 2026-03-01
+pinned: true
 category: Digital Product
 image: /works/optimized/43.jpg
 image_alt: Abstract digital interface composition

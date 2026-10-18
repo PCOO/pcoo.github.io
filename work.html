@@ -1,0 +1,48 @@
+---
+layout: null
+title: Work · Nuclear
+description: Selected branding, art direction, and digital product work by Nuclear.
+permalink: /work/
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }}</title>
+  <meta name="description" content="{{ page.description | escape }}">
+  <style>
+    * { box-sizing: border-box; }
+    html { background: #000; color: #fff; font-family: Arial, Helvetica, sans-serif; }
+    body { margin: 0; }
+    a { color: inherit; }
+    .work-index { width: min(100% - 2rem, 1440px); margin-inline: auto; padding: 1.5rem 0 8rem; }
+    .work-index__home { text-decoration: none; }
+    h1 { margin: 6rem 0 3rem; font-size: clamp(3rem, 9vw, 8rem); line-height: .9; letter-spacing: -.06em; }
+    .work-index__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem 1.25rem; }
+    .work-card { text-decoration: none; }
+    .work-card__image { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+    .work-card__category { display: block; margin-top: .7rem; color: #888; }
+    .work-card__title { display: block; margin-top: .2rem; font-size: clamp(1.2rem, 2vw, 2rem); }
+    @media (max-width: 700px) {
+      .work-index__grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="work-index">
+    <a class="work-index__home" href="{{ '/' | relative_url }}">Nuclear</a>
+    <h1>Work</h1>
+    <div class="work-index__grid">
+      {% assign works = site.works | sort: "date" | reverse %}
+      {% for work in works %}
+        <a class="work-card" href="{{ work.url | relative_url }}">
+          <img class="work-card__image" src="{{ work.image | relative_url }}" alt="{{ work.image_alt | default: work.title | escape }}" loading="lazy">
+          <span class="work-card__category">{{ work.category }}</span>
+          <span class="work-card__title">{{ work.title }}</span>
+        </a>
+      {% endfor %}
+    </div>
+  </main>
+</body>
+</html>

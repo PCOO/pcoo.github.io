@@ -1,6 +1,7 @@
 ---
 title: Identity Study 42
 date: 2026-02-01
+pinned: true
 category: Brand Identity
 image: /works/optimized/42.jpg
 image_alt: Brand identity visual study

@@ -1,6 +1,6 @@
 ---
 layout: null
-title: Nuclear — Branding & Design Studio
+title: Nuclear �?Branding & Design Studio
 description: Nuclear is a global branding and design studio.
 ---
 <!DOCTYPE html>
@@ -10,10 +10,12 @@ description: Nuclear is a global branding and design studio.
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nuclear - Branding & Design Studio</title>
 <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/switzer">
+<link rel="stylesheet" href="{{ '/site-shell.css' | relative_url }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+:root { --work-card-font-size: 1.75vw; }
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { font-size: 16px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
@@ -214,36 +216,38 @@ body {
 
 .featured-works--footer {
   position: absolute;
-  top: 37%;
+  top: 8.3%;
   right: 6.7%;
-  left: 6.7%;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 2vw;
+  width: min(44%, 42rem);
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
 }
 
 .featured-works--footer .featured-work {
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 0.8rem;
+  grid-template-columns: 8.5rem minmax(0, 1fr) 1.35rem;
+  align-items: center;
+  gap: 1rem;
 }
 
 .featured-works--footer .featured-work__image {
-  grid-column: 1 / -1;
-  margin-bottom: 0.8rem;
+  grid-column: auto;
+  margin-bottom: 0;
+  border-radius: 0.8rem;
+}
+
+.featured-works--footer .featured-work__category,
+.featured-works--footer .featured-work__title {
+  font-size: var(--footer-body-font-size);
+  line-height: 1.4;
 }
 
 .featured-works--footer .featured-work__category {
-  margin-bottom: 0.35rem;
-  font-size: clamp(0.7rem, 0.8vw, 0.95rem);
-}
-
-.featured-works--footer .featured-work__title {
-  font-size: clamp(0.95rem, 1.25vw, 1.4rem);
-  line-height: 1.15;
+  margin-bottom: 0.3rem;
 }
 
 .featured-works--footer .featured-work__arrow {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.35rem;
+  height: 1.35rem;
 }
 
 .nav__toggle:focus-visible {
@@ -293,7 +297,7 @@ body {
 .nav__link {
   color: #fff;
   text-decoration: none;
-  font-size: clamp(1.8rem, 3.2vw, 3.2rem);
+  font-size: clamp(1.08rem, 1.92vw, 1.92rem);
   font-weight: 500;
   letter-spacing: -0.04em;
   line-height: 1.38;
@@ -329,47 +333,13 @@ body {
 }
 
 .hero__content.is-stacked .hero__desc {
-  left: 0;
-  margin-left: 0;
-}
-
-.hero__subtitle {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  margin-bottom: 0.6rem;
-  cursor: pointer;
-}
-
-.hero__dot {
-  width: 1.1rem;
-  height: 1.1rem;
-  border-radius: 50%;
-  background: #fff;
-  flex-shrink: 0;
-  transition: background 0.3s;
-}
-
-.hero__subtitle:hover .hero__dot {
-  background: #A1FF00;
-}
-
-.hero__subtitle-text {
-  color: #fff;
-  font-size: clamp(0.9rem, 1.37vw, 1.4rem);
-  font-weight: 500;
-  letter-spacing: -0.04em;
-  transition: color 0.3s;
-}
-
-.hero__subtitle:hover .hero__subtitle-text {
-  color: #A1FF00;
+  margin-left: auto;
 }
 
 .hero__title {
-  font-size: clamp(2.2rem, 4.1vw, 4.1rem);
-  font-weight: 500;
-  letter-spacing: -0.04em;
+  font-size: clamp(3.129rem, 5.831vw, 5.831rem);
+  font-weight: 400;
+  letter-spacing: -0.034286em;
   line-height: 0.86;
   color: #fff;
 }
@@ -383,7 +353,7 @@ body {
 }
 
 .hero__title .kern-wide {
-  letter-spacing: 0.03em;
+  letter-spacing: 0.034286em;
 }
 
 .hero__desc {
@@ -391,7 +361,7 @@ body {
   left: var(--desc-offset, 0px);
   max-width: 25rem;
   font-size: clamp(0.85rem, 1.37vw, 1.4rem);
-  font-weight: 500;
+  font-weight: 399;
   letter-spacing: -0.04em;
   line-height: 1.38;
   color: #fff;
@@ -406,7 +376,7 @@ body {
   animation: fadeSlideUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-.nav { animation-delay: 0.1s; }
+.nav { animation-delay: 0.1s; animation-fill-mode: backwards; }
 .hero__content { animation-delay: 0.25s; }
 
 @keyframes fadeSlideUp {
@@ -414,7 +384,428 @@ body {
   to   { opacity: 1; transform: translate3d(0, 0, 0); }
 }
 
+.services {
+  width: 100%;
+  max-width: 1829px;
+  margin-inline: auto;
+  background: #000;
+  container-type: inline-size;
+}
+
+.services__inner {
+  padding: 10cqw 0 5cqw;
+}
+
+.services__title {
+  margin: 0 0 1.43cqw;
+  padding-left: 1.327cqw;
+  font-size: 5.249cqw;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.05em;
+}
+
+.services__layout {
+  display: grid;
+  grid-template-columns: 45.27cqw minmax(0, 1fr);
+  align-items: start;
+  column-gap: 10.9cqw;
+  padding-inline: 1.1cqw;
+}
+
+.services__visual {
+  position: sticky;
+  top: 12vh;
+  align-self: start;
+  width: 100%;
+  aspect-ratio: 828 / 549;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 0.2cqw;
+  background: #171717;
+}
+
+.services__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 180ms ease;
+}
+
+.services__image.is-changing {
+  opacity: 0;
+}
+
+.services__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.services__link {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #626262;
+  font: inherit;
+  font-size: 4.045cqw;
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  text-align: left;
+  cursor: pointer;
+  transition: color 160ms ease;
+}
+
+.services__link.is-active,
+.services__link:hover,
+.services__link:focus-visible {
+  color: #fff;
+}
+
+@media (min-width: 769px) {
+  .services__visual {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+    transition: opacity 600ms ease, clip-path 900ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .services__link {
+    transform: translateX(var(--center-shift, 0px));
+    transition: color 300ms ease, transform 900ms cubic-bezier(0.16, 1, 0.3, 1) calc(var(--i, 0) * 35ms), translate 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .services.is-expanded .services__visual {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+
+  .services.is-expanded .services__link {
+    transform: translateX(0);
+  }
+
+  .services.is-expanded .services__link.is-active {
+    translate: 1.2cqw 0;
+  }
+}
+
+@media (min-width: 769px) and (prefers-reduced-motion: reduce) {
+  .services__visual,
+  .services__link {
+    transition: none;
+  }
+}
+
+.selected-cases {
+  width: 100%;
+  max-width: 1829px;
+  margin-inline: auto;
+  padding: 5cqw 1.1cqw 5cqw;
+  background: #000;
+  container-type: inline-size;
+}
+
+.selected-cases__title {
+  margin: 0 0 1.43cqw;
+  font-size: 5.249cqw;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.05em;
+}
+
+.selected-cases__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.25cqw 1.25cqw;
+}
+
+.selected-case {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+}
+
+.selected-case--wide {
+  grid-column: 1 / -1;
+}
+
+.selected-case__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 8 / 5;
+  object-fit: cover;
+  background: #171717;
+  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), filter 300ms ease;
+}
+
+.selected-case--wide .selected-case__image {
+  aspect-ratio: 16 / 9;
+}
+
+.selected-case:hover .selected-case__image,
+.selected-case:focus-visible .selected-case__image {
+  filter: brightness(1.12);
+  transform: scale(1.012);
+}
+
+.selected-case__content {
+  display: grid;
+  gap: 0.22cqw;
+  margin-top: 0.55cqw;
+}
+
+.selected-case__label,
+.selected-case__summary {
+  font-size: var(--work-card-font-size);
+}
+
+.selected-case__label {
+  display: block;
+  color: #fff;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+
+.selected-case__summary {
+  display: block;
+  max-width: 52ch;
+  color: #8a8a8a;
+  line-height: 1.35;
+}
+
+.selected-cases__action {
+  display: block;
+  width: fit-content;
+  margin: 2.6cqw auto 0;
+  padding: 0.7em 1.45em;
+  border-radius: 999px;
+  background: #202020;
+  color: #fff;
+  font-size: 1.15cqw;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.selected-cases__action:hover,
+.selected-cases__action:focus-visible {
+  background: #A1FF00;
+  color: #000;
+  transform: translateY(-2px);
+}
+
+.process {
+  width: 100%;
+  max-width: 1829px;
+  margin-inline: auto;
+  padding: 5cqw 1.1cqw 10cqw;
+  background: #000;
+  container-type: inline-size;
+}
+
+.process__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid #242424;
+  border-left: 1px solid #242424;
+  list-style: none;
+}
+
+.process__step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  aspect-ratio: 1.3 / 1;
+  padding: 1.5cqw;
+  border-right: 1px solid #242424;
+  border-bottom: 1px solid #242424;
+  background: #050505;
+  color: #fff;
+  outline: none;
+  transition: background 220ms ease, color 220ms ease;
+}
+
+.process__step:hover,
+.process__step:focus-visible,
+.process__step.is-active {
+  background: #A1FF00;
+  color: #000;
+}
+
+.process__number {
+  font-size: 0.85cqw;
+  line-height: 1;
+}
+
+.process__arrow {
+  position: absolute;
+  top: 1.45cqw;
+  right: 1.5cqw;
+  font-size: 1cqw;
+  line-height: 1;
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
+.process__step:hover .process__arrow,
+.process__step:focus-visible .process__arrow,
+.process__step.is-active .process__arrow {
+  opacity: 1;
+}
+
+.process__title {
+  margin-bottom: 1.2cqw;
+  font-size: var(--work-card-font-size);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+
+.process__summary {
+  max-width: 26em;
+  color: #8a8a8a;
+  font-size: var(--work-card-font-size);
+  line-height: 1.35;
+  transition: color 220ms ease;
+}
+
+.process__step:hover .process__summary,
+.process__step:focus-visible .process__summary,
+.process__step.is-active .process__summary {
+  color: rgba(0, 0, 0, 0.62);
+}
+
 @media (max-width: 768px) {
+  .process {
+    padding: 4rem 1.5rem 8rem;
+  }
+
+  .process__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process__step {
+    aspect-ratio: auto;
+    min-height: 13rem;
+    padding: 1.1rem;
+    gap: 3rem;
+  }
+
+  .process__number {
+    font-size: 0.75rem;
+  }
+
+  .process__arrow {
+    top: 1rem;
+    right: 1.1rem;
+    font-size: 0.9rem;
+  }
+
+  .process__title {
+    margin-bottom: 0.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .selected-cases {
+    padding: 4rem 1.5rem 4rem;
+  }
+
+  .selected-cases__title {
+    margin-bottom: 1.5rem;
+    font-size: clamp(2rem, 8vw, 3.5rem);
+  }
+
+  .selected-cases__grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .selected-case--wide {
+    grid-column: auto;
+  }
+
+  .selected-case__content {
+    gap: 0.25rem;
+    margin-top: 0.55rem;
+  }
+
+  .selected-cases__action {
+    margin-top: 2rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .services__inner {
+    padding: 8rem 1.5rem 3rem;
+  }
+
+  .services__title {
+    margin-bottom: 1.5rem;
+    padding-left: 0;
+    font-size: clamp(2rem, 8vw, 3.5rem);
+  }
+
+  .services__layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    padding-inline: 0;
+  }
+
+  .services__visual {
+    position: fixed;
+    z-index: 8;
+    top: auto;
+    bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+    left: 50%;
+    width: min(calc(100vw - 2rem), 32rem);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 0.75rem;
+    box-shadow: 0 0.75rem 2.5rem rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translate(-50%, 0.75rem);
+    transition: opacity 180ms ease, transform 180ms ease, visibility 180ms;
+  }
+
+  .services.is-preview-visible .services__visual {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+  }
+
+  body.menu-open .services .services__visual {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .services__list {
+    padding-bottom: 1rem;
+    text-align: center;
+  }
+
+  .services__link {
+    margin-inline: auto;
+    font-size: clamp(2rem, 7.5vw, 3.6rem);
+    line-height: 1.12;
+    text-align: center;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .services__visual {
+      transition: none;
+    }
+  }
+
   body.menu-open {
     overflow: hidden;
   }
@@ -574,16 +965,18 @@ body {
   }
 
   .featured-works--menu .featured-work__image {
-    border-radius: 0.35rem;
+    border-radius: 0.7rem;
   }
 
   .featured-works--menu .featured-work__category {
-    margin-bottom: 0.45rem;
-    font-size: 0.75rem;
+    margin-bottom: 0.3rem;
+    font-size: 0.975rem;
+    line-height: 1.4;
   }
 
   .featured-works--menu .featured-work__title {
-    font-size: 1rem;
+    font-size: 0.975rem;
+    line-height: 1.4;
   }
 
   .featured-works--menu .featured-work__arrow {
@@ -626,19 +1019,18 @@ body {
     text-align: center;
   }
   .hero__text { width: 100%; flex: 0 0 auto; }
-  .hero__subtitle { display: none; }
   .hero__desc {
     display: block;
     left: 0;
     max-width: 28rem;
     margin: 0 auto;
-    font-size: clamp(0.85rem, 1.37vw, 1.4rem);
+    font-size: clamp(1.02rem, 1.644vw, 1.68rem);
     text-align: center;
   }
   .hero__title {
     width: 100%;
     padding-right: 0;
-    font-size: clamp(2.2rem, 9.25vw, 2.35rem);
+    font-size: clamp(2.64rem, 11.1vw, 2.82rem);
     text-align: center;
   }
   .hero__title-line {
@@ -647,7 +1039,19 @@ body {
   }
 }
 
+@media (max-width: 480px) {
+  .services__inner {
+    padding: 8rem 1.25rem 3rem;
+  }
+
+  .services__link {
+    font-size: clamp(2rem, 9.6vw, 2.5rem);
+    line-height: 1.15;
+  }
+}
+
 .site-footer {
+  --footer-body-font-size: var(--work-card-font-size);
   position: relative;
   width: 100%;
   min-height: max(940px, 78vw);
@@ -674,27 +1078,28 @@ body {
 
 .footer-nav {
   position: absolute;
-  top: 11.6%;
-  left: 50%;
+  top: calc(8.3% + 14rem);
+  left: 6.7%;
   display: flex;
+  width: 38%;
   flex-direction: column;
   align-items: center;
-  transform: translateX(-50%);
   color: #ccc;
-  font-size: 5.25vw;
+  font-size: clamp(3.2rem, 5.376vw, 6.08rem);
   font-weight: 400;
   line-height: 1.16;
   letter-spacing: -0.04em;
   text-align: center;
   white-space: nowrap;
+  transform: translateY(-50%);
 }
 
 .footer-brand {
   position: absolute;
-  top: 70%;
-  left: 16.77%;
+  top: 46.1%;
+  left: 4.2%;
   display: block;
-  width: 66.45%;
+  width: 93.62%;
   line-height: 0;
 }
 
@@ -715,7 +1120,7 @@ body {
   justify-content: space-between;
   gap: 1.5rem;
   color: #e5e5e5;
-  font-size: 1.75vw;
+  font-size: var(--footer-body-font-size);
   font-weight: 400;
   line-height: 1.4;
   letter-spacing: -0.035em;
@@ -737,12 +1142,19 @@ body {
 }
 
 @media (max-width: 600px) {
+  :root {
+    --work-card-font-size: 0.975rem;
+  }
+
   .site-footer {
-    min-height: 1180px;
+    min-height: 940px;
   }
 
   .footer-nav {
     top: 48px;
+    left: 50%;
+    width: auto;
+    transform: translateX(-50%);
     font-size: 2rem;
     line-height: 1.18;
   }
@@ -751,6 +1163,7 @@ body {
     top: 225px;
     right: 6%;
     left: 6%;
+    width: auto;
     grid-template-columns: 1fr;
     gap: 1.25rem;
   }
@@ -764,12 +1177,9 @@ body {
   .featured-works--footer .featured-work__image {
     grid-column: auto;
     margin-bottom: 0;
-    border-radius: 0.4rem;
+    border-radius: 0.8rem;
   }
 
-  .featured-works--footer .featured-work__title {
-    font-size: 1rem;
-  }
 
   .featured-works--footer .featured-work__arrow {
     width: 1.35rem;
@@ -777,9 +1187,9 @@ body {
   }
 
   .footer-brand {
-    top: 76%;
-    left: 6%;
-    width: 88%;
+    top: 73.4%;
+    left: 3.5%;
+    width: 93.62%;
   }
 
   .footer-bottom {
@@ -788,7 +1198,7 @@ body {
     left: 6%;
     flex-wrap: wrap;
     gap: 22px 12px;
-    font-size: 0.75rem;
+    font-size: var(--footer-body-font-size);
     letter-spacing: -0.025em;
   }
 
@@ -815,7 +1225,9 @@ body {
   .nav__link,
   .hero__slide,
   .hero__slide img,
-  .hero__slide video {
+  .hero__slide video,
+  .services__image,
+  .services__link {
     transition: none;
   }
 
@@ -831,50 +1243,23 @@ body {
 <section class="hero">
   <div class="hero__showcase" aria-label="Selected work">
     <figure class="hero__slide is-active" aria-hidden="false">
-      <img src="works/hero椤典富鍥句笓鐢?Slide%2016_9%20-%2018.jpg" alt="Cryptocurrency wallet mobile product design" fetchpriority="high">
+      <img src="works/hero椤典富鍥句笓�?Slide%2016_9%20-%2018.jpg" alt="Cryptocurrency wallet mobile product design" fetchpriority="high">
     </figure>
     <figure class="hero__slide" aria-hidden="true">
-      <img src="works/hero椤典富鍥句笓鐢?Slide%2016_9%20-%2016.jpg" alt="Restaurant menu identity and print design" loading="eager">
+      <img src="works/hero椤典富鍥句笓�?Slide%2016_9%20-%2016.jpg" alt="Restaurant menu identity and print design" loading="eager">
     </figure>
   </div>
   <div class="hero__pagination" aria-label="Choose featured work">
     <button class="hero__pagination-button" type="button" aria-label="Show cryptocurrency wallet project" aria-current="true"></button>
     <button class="hero__pagination-button" type="button" aria-label="Show restaurant identity project" aria-current="false"></button>
   </div>
-  <nav class="nav">
-    <a href="/" aria-label="Nuclear Home">
-      <svg class="nav__logo" viewBox="0 0 202.176 44.749" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M86.65 10.6c2.89 0 5.41.52 7.58 1.57 2.17 1.05 3.88 2.52 5.15 4.42 1.26 1.89 1.96 4.12 2.09 6.67h-8.66c-.24-1.65-.89-2.98-1.94-3.98-1.03-1.02-2.39-1.53-4.07-1.53-1.42 0-2.66.39-3.72 1.16-1.05.76-1.87 1.88-2.46 3.34-.59 1.46-.88 3.24-.88 5.32 0 2.11.29 3.9.86 5.38.59 1.48 1.41 2.61 2.48 3.38 1.06.78 2.3 1.16 3.73 1.16 1.05 0 1.99-.22 2.82-.65.85-.43 1.54-1.05 2.09-1.87.56-.83.93-1.83 1.1-2.99h8.66c-.14 2.53-.83 4.75-2.07 6.68-1.22 1.91-2.91 3.4-5.06 4.48-2.15 1.08-4.7 1.62-7.64 1.62-3.39 0-6.3-.72-8.74-2.15-2.43-1.45-4.29-3.46-5.6-6.03-1.29-2.57-1.94-5.53-1.94-8.87 0-3.39.65-6.36 1.96-8.92 1.32-2.57 3.2-4.57 5.62-6 2.43-1.45 5.31-2.18 8.66-2.18zm44.64 0c2.18 0 4.21.35 6.1 1.05 1.89.69 3.54 1.73 4.95 3.12 1.42 1.39 2.53 3.14 3.32 5.25.79 2.1 1.18 4.55 1.18 7.37v2.52h-22.53v.02c0 1.64.3 3.05.91 4.24.62 1.19 1.49 2.11 2.61 2.76 1.12.65 2.45.97 3.98.97 1.02 0 1.95-.14 2.8-.43.85-.29 1.57-.72 2.17-1.29.43-.41.79-.89 1.07-1.42h8.77c-.44 1.99-1.31 3.72-2.62 5.21-1.32 1.51-3.03 2.69-5.13 3.53-2.08.83-4.49 1.25-7.21 1.25-3.4 0-6.33-.69-8.79-2.07-2.44-1.39-4.32-3.36-5.64-5.9-1.32-2.56-1.98-5.58-1.98-9.07 0-3.4.66-6.39 1.98-8.96 1.32-2.57 3.18-4.57 5.58-6.01 2.41-1.44 5.24-2.15 8.48-2.15zm31.92 0c1.84 0 3.6.22 5.28.65 1.69.43 3.19 1.1 4.5 2 1.32.9 2.36 2.07 3.12 3.49.76 1.41 1.14 3.1 1.14 5.06v22.31h-8.7v-4.59h-.26c-.53 1.03-1.24 1.95-2.13 2.74-.89.78-1.96 1.39-3.21 1.83-1.25.43-2.69.65-4.33.65-2.11 0-3.99-.37-5.64-1.1-1.65-.75-2.96-1.85-3.92-3.3-.95-1.46-1.42-3.29-1.42-5.47 0-1.84.34-3.38 1.01-4.63.67-1.25 1.59-2.26 2.75-3.02 1.16-.76 2.49-1.33 3.96-1.72 1.5-.39 3.06-.66 4.7-.82 1.92-.2 3.47-.39 4.65-.56 1.18-.19 2.03-.46 2.56-.82.53-.36.8-.89.8-1.59v-.13c0-1.36-.43-2.42-1.29-3.17-.85-.75-2.05-1.12-3.62-1.12-1.65 0-2.96.37-3.94 1.1-.98.72-1.63 1.62-1.94 2.71l-8.48-.69c.43-2.01 1.28-3.75 2.54-5.21 1.26-1.48 2.89-2.61 4.89-3.4 2.01-.8 4.34-1.21 6.98-1.21zM45.31 11.4c.26 0 .47.21.47.47v18.26c-.01 1.81.45 3.22 1.38 4.24.92 1.02 2.2 1.53 3.84 1.53 1.09 0 2.05-.24 2.88-.72.82-.47 1.46-1.14 1.91-2.01.44-.88.67-1.94.68-3.18V15.59c0-1.11-1.13-1.41-2.05-1.5-.5-.05-.9-.44-.9-.94v-1.28c0-.26.21-.47.47-.47h12.38c.26 0 .47.21.47.47v28.23c0 .95.41 1.45.86 1.66.21.1.39.29.39.52v1.23c0 .26-.21.47-.47.47H57.45c-.26 0-.47-.21-.47-.47v-5.3c0-.12-.1-.21-.21-.21-.09 0-.17.06-.2.14-.73 1.93-1.94 3.44-3.64 4.55-1.74 1.15-3.81 1.72-6.21 1.72-2.29 0-4.28-.52-5.96-1.55-1.7-1.02-3.01-2.45-3.95-4.28-.95-1.82-1.41-3.96-1.4-6.41V15.57c-.01-1.09-1.14-1.39-2.05-1.48-.5-.05-.9-.44-.9-.94v-1.28c0-.26.21-.47.47-.47h2.48v-.01h9.9zm67.56 28.57c.03 1.07 1.14 1.36 2.05 1.45.5.05.9.44.9.94v1.28c0 .26-.21.47-.47.47h-2.48v-.003h-9.17V3.68c-.29-.7-1.19-.91-1.95-.98-.5-.05-.9-.44-.9-.95V.47c0-.26.21-.47.47-.47h2.38v-.003h9.17v39.97zm86.42-29.41c.46 0 .95.03 1.48.09.53.06 1 .13 1.4.23v8.14c-.43-.13-1.03-.24-1.79-.35-.76-.1-1.46-.15-2.09-.15-1.35 0-2.56.3-3.62.88-1.05.57-1.88 1.38-2.5 2.41-.6 1.03-.9 2.23-.9 3.58v14.6c.04 1.05 1.15 1.34 2.04 1.43.5.05.9.44.9.94v1.28c0 .26-.21.47-.47.47h-2.48v-.003h-9.17V11.03h8.89v5.77h.35c.6-2.05 1.61-3.6 3.03-4.65 1.42-1.06 3.06-1.59 4.91-1.59zM21.37 10.79c2.29 0 4.28.52 5.96 1.55 1.7 1.02 3.01 2.45 3.94 4.28.95 1.82 1.42 3.96 1.4 6.41v16.59c.01 1.09 1.14 1.39 2.04 1.48.5.05.9.44.9.94v1.28c0 .26-.21.47-.47.47h-2.48v.001h-9.9c-.26 0-.47-.21-.47-.47V25.06c.01-1.81-.45-3.22-1.38-4.24-.92-1.02-2.2-1.53-3.84-1.53-1.09 0-2.05.24-2.88.72-.82.47-1.46 1.14-1.91 2.02-.44.88-.67 1.94-.68 3.18v14.39c0 1.11 1.13 1.41 2.05 1.5.5.05.9.44.9.94v1.28c0 .26-.21.47-.47.47H1.71c-.26 0-.47-.21-.47-.47V15.09c0-.95-.41-1.45-.86-1.66-.21-.1-.39-.29-.39-.52v-1.23c0-.26.21-.47.47-.47h10.17c.26 0 .47.21.47.47v5.3c0 .12.1.21.21.21.09 0 .17-.06.2-.14.73-1.93 1.94-3.44 3.64-4.55 1.74-1.15 3.81-1.72 6.21-1.72zm146.77 17.98c-.29.19-.68.36-1.19.52-.49.14-1.04.28-1.66.41-.62.11-1.24.22-1.85.32-.62.09-1.18.17-1.68.24-1.08.16-2.02.41-2.82.75-.8.34-1.43.81-1.87 1.4-.45.57-.67 1.29-.67 2.15 0 1.25.45 2.2 1.36 2.86.92.65 2.08.97 3.49.97 1.35 0 2.54-.27 3.57-.8 1.03-.55 1.85-1.28 2.43-2.2.59-.92.89-1.96.89-3.12v-3.51zm-36.7-11.33c-1.39 0-2.63.32-3.7.97-1.06.63-1.9 1.49-2.5 2.56-.56.98-.86 2.06-.92 3.25h13.88c0-1.32-.29-2.49-.86-3.51-.58-1.02-1.37-1.82-2.39-2.39-1.01-.59-2.17-.88-3.51-.88z" fill="#fff"/>
-      </svg>
-    </a>
-    <button
-      class="nav__toggle"
-      type="button"
-      aria-expanded="false"
-      aria-controls="primary-menu"
-      aria-label="Open menu"
-    >
-      <span class="nav__toggle-lines" aria-hidden="true"></span>
-    </button>
-    <div class="nav__panel" id="primary-menu">
-      <ul class="nav__links">
-        <li><a class="nav__link" href="#case-studies">Case Studies</a></li>
-        <li><a class="nav__link" href="#about">How &amp; About</a></li>
-        <li><a class="nav__link" href="#contact">Contact</a></li>
-      </ul>
-      {% include featured-works.html context="menu" %}
-    </div>
-  </nav>
+  {% include site-nav.html %}
 
   <div class="hero__content">
     <div class="hero__text">
-      <div class="hero__subtitle">
-        <span class="hero__dot" aria-hidden="true"></span>
-        <span class="hero__subtitle-text">Trusted by 200+ businesses &amp; individuals.</span>
-      </div>
       <h1 class="hero__title">
-        <span class="hero__title-line">Where Your Brand</span><br>
-        <span class="hero__title-line">Evolves,  And Transforms</span>
+        <span class="hero__title-line">Where your brand</span><br>
+        <span class="hero__title-line">evolves,  and transforms</span>
       </h1>
     </div>
     <p class="hero__desc">
@@ -883,72 +1268,95 @@ body {
   </div>
 </section>
 
-<footer class="site-footer" aria-label="Website footer">
-  <nav class="footer-nav" aria-label="Footer navigation">
-    <a href="#case-studies">Case Studies</a>
-    <a href="#about">How &amp; About</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<section class="services" id="services" aria-labelledby="services-title">
+  <div class="services__inner">
+    <h2 class="services__title" id="services-title">Our services</h2>
 
-  {% include featured-works.html context="footer" %}
+    <div class="services__layout">
+      <figure class="services__visual">
+        <img
+          class="services__image"
+          src="/works/optimized/43.jpg"
+          alt="Brand identity guidelines and outdoor billboard design"
+          width="1440"
+          height="810"
+          loading="eager"
+        >
+      </figure>
 
-  <a class="footer-brand" href="#top" aria-label="Nuclear home">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1216 268"
-        width="1216"
-        height="268"
-        fill="none"
-        aria-hidden="true"
-        focusable="false"
-      >
-        <path
-          fill="currentColor"
-          d="
-            M521.159 63.4853C538.542 63.4853 553.698 66.5996 566.75 72.888C579.801 79.1764 590.086 87.9802 597.725 99.3592C605.303 110.678 609.513 124.034 610.295 139.306H558.209C556.766 129.424 552.856 121.458 546.541 115.47C540.346 109.361 532.166 106.306 522.062 106.306C513.521 106.306 506.063 108.642 499.687 113.254C493.372 117.805 488.44 124.513 484.892 133.257C481.343 142.001 479.599 152.661 479.599 165.118C479.599 177.755 481.343 188.475 484.771 197.339C488.32 206.202 493.252 212.97 499.687 217.581C506.063 222.253 513.521 224.528 522.122 224.528C528.437 224.528 534.091 223.211 539.083 220.636C544.195 218.06 548.345 214.347 551.653 209.436C555.021 204.465 557.247 198.477 558.269 191.529H610.355C609.513 206.681 605.363 219.977 597.905 231.536C590.568 242.974 580.403 251.898 567.472 258.366C554.54 264.834 539.203 268.068 521.52 268.068C501.131 268.068 483.629 263.756 468.953 255.192C454.338 246.508 443.151 234.47 435.272 219.079C427.513 203.687 423.603 185.96 423.603 165.956C423.603 145.654 427.513 127.867 435.392 112.535C443.331 97.1433 454.638 85.1654 469.194 76.6012C483.809 67.9172 501.131 63.5452 521.28 63.5452L521.159 63.4853Z
-
-            M789.649 63.4853C802.761 63.4853 814.971 65.5815 826.338 69.7737C837.706 73.9061 847.63 80.1346 856.11 88.4593C864.651 96.784 871.327 107.265 876.079 119.901C880.83 132.478 883.176 147.151 883.176 164.04V179.132H747.668V179.252C747.668 189.074 749.472 197.518 753.141 204.645C756.87 211.772 762.103 217.282 768.839 221.175C775.575 225.067 783.575 226.984 792.777 226.984C798.912 226.984 804.505 226.145 809.618 224.409C814.73 222.672 819.061 220.097 822.669 216.683C825.256 214.227 827.421 211.353 829.105 208.179H881.853C879.206 220.097 873.974 230.458 866.094 239.381C858.155 248.424 847.87 255.491 835.24 260.522C822.729 265.493 808.234 268.008 791.875 268.008C771.425 268.008 753.803 263.876 739.007 255.611C724.331 247.287 713.024 235.488 705.085 220.276C697.146 204.945 693.176 186.858 693.176 165.956C693.176 145.594 697.146 127.687 705.085 112.295C713.024 96.9037 724.211 84.9258 738.646 76.3017C753.141 67.6776 770.162 63.4254 789.649 63.4254V63.4853Z
-
-            M981.634 63.4853C992.701 63.4853 1003.29 64.8029 1013.39 67.3782C1023.56 69.9534 1032.58 73.966 1040.46 79.3561C1048.4 84.7461 1054.65 91.7532 1059.22 100.258C1063.79 108.702 1066.08 118.823 1066.08 130.562V264.175H1013.75V236.686H1012.19C1009 242.855 1004.73 248.365 999.377 253.096C994.024 257.767 987.589 261.42 980.07 264.056C972.552 266.631 963.891 267.948 954.027 267.948C941.337 267.948 930.029 265.733 920.105 261.361C910.181 256.869 902.302 250.281 896.528 241.597C890.814 232.853 887.987 221.893 887.987 208.837C887.987 197.818 890.032 188.595 894.062 181.109C898.092 173.622 903.625 167.573 910.602 163.022C917.579 158.47 925.578 155.057 934.42 152.721C943.442 150.385 952.824 148.768 962.688 147.81C974.236 146.612 983.559 145.474 990.656 144.456C997.753 143.318 1002.87 141.701 1006.05 139.545C1009.24 137.389 1010.87 134.215 1010.87 130.023V129.244C1010.87 121.099 1008.28 114.751 1003.11 110.259C997.994 105.767 990.776 103.551 981.333 103.551C971.409 103.551 963.53 105.767 957.636 110.139C951.742 114.451 947.832 119.841 945.968 126.369L894.964 122.237C897.551 110.199 902.663 99.7784 910.241 91.0345C917.82 82.1709 927.623 75.4034 939.653 70.6721C951.742 65.8809 965.756 63.4254 981.634 63.4254V63.4853Z
-
-            M272.517 68.2765C274.081 68.2765 275.344 69.5342 275.344 71.0913V180.45C275.284 191.29 278.051 199.734 283.644 205.843C289.178 211.952 296.876 215.006 306.74 215.006C313.296 215.006 319.07 213.569 324.062 210.694C328.994 207.879 332.843 203.867 335.55 198.656C338.196 193.386 339.58 187.038 339.64 179.611V93.3702C339.64 86.7225 332.843 84.9258 327.31 84.3868C324.303 84.0874 321.897 81.7517 321.897 78.7572V71.0913C321.897 69.5342 323.16 68.2765 324.724 68.2765H399.184C400.748 68.2765 402.011 69.5342 402.011 71.0913V240.16C402.011 245.849 404.477 248.844 407.183 250.101C408.447 250.7 409.529 251.838 409.529 253.216V260.582C409.529 262.139 408.266 263.397 406.702 263.397H345.534C343.97 263.397 342.707 262.139 342.707 260.582V228.841C342.707 228.122 342.106 227.583 341.444 227.583C340.903 227.583 340.422 227.942 340.241 228.421C335.851 239.98 328.573 249.023 318.348 255.671C307.883 262.558 295.433 265.972 280.998 265.972C267.225 265.972 255.256 262.858 245.151 256.689C234.926 250.58 227.047 242.016 221.394 231.056C215.68 220.157 212.913 207.34 212.973 192.667V93.2505C212.913 86.7225 206.117 84.9258 200.643 84.3868C197.636 84.0874 195.23 81.7517 195.23 78.7572V71.0913C195.23 69.5342 196.493 68.2765 198.057 68.2765H212.973V68.2166H272.517V68.2765Z
-
-            M678.861 239.381C679.042 245.789 685.718 247.526 691.191 248.065C694.198 248.365 696.604 250.7 696.604 253.695V261.361C696.604 262.918 695.341 264.175 693.777 264.175H678.861V264.157H623.708V22.0417C621.963 17.8494 616.55 16.5918 611.979 16.1725C608.972 15.8731 606.566 13.5374 606.566 10.483V2.81715C606.566 1.26002 607.829 0.00234188 609.393 0.00234188H623.708V-0.015625H678.861V239.363V239.381Z
-
-            M1198.64 63.2458C1201.41 63.2458 1204.35 63.4254 1207.54 63.7848C1210.73 64.1441 1213.56 64.5633 1215.96 65.1622V113.912C1213.38 113.134 1209.77 112.475 1205.2 111.816C1200.62 111.217 1196.41 110.918 1192.62 110.918C1184.51 110.918 1177.23 112.715 1170.85 116.188C1164.54 119.602 1159.54 124.453 1155.82 130.622C1152.21 136.79 1150.4 143.977 1150.4 152.062V239.501C1150.64 245.789 1157.32 247.526 1162.67 248.065C1165.68 248.365 1168.09 250.7 1168.09 253.695V261.361C1168.09 262.918 1166.82 264.175 1165.26 264.175H1150.34V264.157H1095.19V66.0606H1148.66V100.617H1150.76C1154.37 88.3395 1160.45 79.0566 1168.99 72.7682C1177.53 66.4199 1187.39 63.2458 1198.52 63.2458H1198.64Z
-
-            M128.529 64.6232C142.302 64.6232 154.271 67.7375 164.376 73.9061C174.6 80.0149 182.479 88.5791 188.073 99.5389C193.787 110.439 196.614 123.255 196.493 137.928V237.285C196.553 243.813 203.35 245.61 208.763 246.149C211.77 246.448 214.176 248.784 214.176 251.778V259.444C214.176 261.001 212.913 262.259 211.349 262.259H196.433L136.889 262.265C135.325 262.265 134.062 261.007 134.062 259.45V150.086C134.122 139.246 131.356 130.801 125.762 124.693C120.229 118.584 112.53 115.529 102.666 115.529C96.1103 115.529 90.3364 116.967 85.3443 119.841C80.4123 122.656 76.563 126.669 73.8565 131.939C71.2101 137.209 69.8267 143.558 69.7666 150.984V237.165C69.7666 243.813 76.563 245.61 82.0964 246.149C85.1037 246.448 87.5095 248.784 87.5095 251.778V259.444C87.5095 261.001 86.2465 262.259 84.6827 262.259H10.2825C8.71876 262.259 7.4557 261.001 7.4557 259.444V90.3758C7.4557 84.6862 4.98973 81.6918 2.28318 80.4341C1.02012 79.8352 -0.0625 78.6973 -0.0625 77.3198V69.9534C-0.0625 68.3963 1.20056 67.1386 2.76434 67.1386H63.9324C65.4962 67.1386 66.7593 68.3963 66.7593 69.9534V101.695C66.7593 102.414 67.3607 102.953 68.0223 102.953C68.5637 102.953 69.0448 102.593 69.2253 102.114C73.6159 90.5554 80.8935 81.5121 91.1183 74.8643C101.584 67.9771 114.034 64.5633 128.469 64.5633L128.529 64.6232Z
-
-            M1011.29 172.305C1009.54 173.443 1007.2 174.461 1004.13 175.419C1001.18 176.257 997.873 177.096 994.144 177.874C990.415 178.533 986.686 179.192 983.018 179.791C979.289 180.33 975.92 180.809 972.913 181.228C966.417 182.187 960.764 183.684 955.952 185.72C951.14 187.756 947.351 190.571 944.705 194.105C941.998 197.518 940.675 201.83 940.675 206.981C940.675 214.467 943.382 220.157 948.855 224.109C954.388 228.002 961.365 229.919 969.846 229.919C977.965 229.919 985.123 228.302 991.318 225.127C997.513 221.833 1002.44 217.461 1005.93 211.952C1009.48 206.442 1011.29 200.213 1011.29 193.266V172.245V172.305Z
-
-            M790.552 104.45C782.191 104.45 774.733 106.366 768.298 110.259C761.922 114.032 756.87 119.183 753.261 125.591C749.893 131.46 748.089 137.928 747.728 145.055H831.21C831.21 137.15 829.466 130.142 826.037 124.034C822.549 117.925 817.798 113.134 811.663 109.72C805.588 106.187 798.611 104.45 790.552 104.45Z
-          "
-        />
-      </svg>
-  </a>
-
-  <div class="footer-bottom">
-    <nav class="footer-socials" aria-label="Social and careers">
-      <a href="#wechat">WeChat</a>
-      <a href="#telegram">Telegram</a>
-      <a href="mailto:hello@example.com">Email</a>
-      <a href="#careers">Careers</a>
-    </nav>
-    <p class="footer-copyright">© TheMeMeCat 2022 – 2026</p>
-    <a class="footer-back" href="#top">Back to top ↑</a>
+      <ul class="services__list" aria-label="Services">
+        <li><button class="services__link is-active" type="button" aria-pressed="true" data-service-image="/works/optimized/43.jpg" data-service-alt="Brand identity guidelines and outdoor billboard design">Brand Strategy</button></li>
+        <li><button class="services__link" type="button" aria-pressed="false" data-service-image="/works/optimized/42.jpg" data-service-alt="Brand identity guidelines and visual applications">Brand Identity</button></li>
+        <li><button class="services__link" type="button" aria-pressed="false" data-service-image="/works/optimized/18.jpg" data-service-alt="Mobile cryptocurrency wallet product interface">Product Design</button></li>
+        <li><button class="services__link" type="button" aria-pressed="false" data-service-image="/works/optimized/18.jpg" data-service-alt="Mobile cryptocurrency wallet product interface">UX / UI Design</button></li>
+        <li><button class="services__link" type="button" aria-pressed="false" data-service-image="/works/optimized/25.jpg" data-service-alt="Digital brand and interface design concepts">Website Development</button></li>
+        <li><button class="services__link" type="button" aria-pressed="false" data-service-image="/works/optimized/27.jpg" data-service-alt="Abstract orange brand identity campaign">Brand Video</button></li>
+        <li><button class="services__link" type="button" aria-pressed="false" data-service-image="/works/optimized/42.jpg" data-service-alt="Brand identity guidelines and visual applications">Pitch Deck</button></li>
+        <li><button class="services__link" type="button" aria-pressed="false" data-service-image="/works/optimized/26.jpg" data-service-alt="Bright typographic campaign concepts">Content Creation</button></li>
+        <li><button class="services__link" type="button" aria-pressed="false" data-service-image="/works/optimized/26.jpg" data-service-alt="Bright typographic campaign concepts">Paid Social</button></li>
+        <li><button class="services__link" type="button" aria-pressed="false" data-service-image="/works/optimized/43.jpg" data-service-alt="Brand identity guidelines and outdoor billboard design">Advertising</button></li>
+      </ul>
+    </div>
   </div>
-</footer>
+</section>
 
+<section class="selected-cases" id="case-studies" aria-labelledby="selected-cases-title">
+  <h2 class="selected-cases__title" id="selected-cases-title">Selected Case</h2>
+  <div class="selected-cases__grid">
+    {% assign pinned_works = site.works | where: "pinned", true | sort: "date" | reverse | slice: 0, 3 %}
+    {% for work in pinned_works %}
+      <a class="selected-case{% if forloop.last %} selected-case--wide{% endif %}" href="{{ work.url | relative_url }}">
+        <img class="selected-case__image" src="{{ work.image | relative_url }}" alt="{{ work.image_alt | default: work.title | escape }}" width="1440" height="810" loading="lazy">
+        <span class="selected-case__content">
+          <span class="selected-case__label">{{ work.title }}</span>
+          {% if work.summary %}<span class="selected-case__summary">{{ work.summary }}</span>{% endif %}
+        </span>
+      </a>
+    {% endfor %}
+  </div>
+  <a class="selected-cases__action" href="{{ '/work/' | relative_url }}">Explore +</a>
+</section>
+
+<section class="process" id="process" aria-labelledby="process-title">
+  <h2 class="selected-cases__title" id="process-title">How We Build</h2>
+  <ol class="process__grid">
+    <li class="process__step" tabindex="0">
+      <span class="process__number">01</span><span class="process__arrow" aria-hidden="true">↗</span>
+      <div><h3 class="process__title">Discovery</h3><p class="process__summary">Research, workshops and goal setting to understand the brand, audience and market.</p></div>
+    </li>
+    <li class="process__step" tabindex="0">
+      <span class="process__number">02</span><span class="process__arrow" aria-hidden="true">↗</span>
+      <div><h3 class="process__title">Strategy</h3><p class="process__summary">A clear positioning, narrative and roadmap that guides every design decision.</p></div>
+    </li>
+    <li class="process__step" tabindex="0">
+      <span class="process__number">03</span><span class="process__arrow" aria-hidden="true">↗</span>
+      <div><h3 class="process__title">Identity</h3><p class="process__summary">Logo, typography, color and a visual language built to be recognized.</p></div>
+    </li>
+    <li class="process__step" tabindex="0">
+      <span class="process__number">04</span><span class="process__arrow" aria-hidden="true">↗</span>
+      <div><h3 class="process__title">Design</h3><p class="process__summary">Product, interface and campaign design refined through rapid iteration.</p></div>
+    </li>
+    <li class="process__step" tabindex="0">
+      <span class="process__number">05</span><span class="process__arrow" aria-hidden="true">↗</span>
+      <div><h3 class="process__title">Build</h3><p class="process__summary">Websites and digital experiences developed with precision and performance.</p></div>
+    </li>
+    <li class="process__step" tabindex="0">
+      <span class="process__number">06</span><span class="process__arrow" aria-hidden="true">↗</span>
+      <div><h3 class="process__title">Launch</h3><p class="process__summary">Hands-on support to bring the system to market and keep it consistent.</p></div>
+    </li>
+  </ol>
+</section>
+
+{% include site-footer.html %}
+
+<script src="{{ '/site-shell.js' | relative_url }}" defer></script>
 <script>
 const heroContent = document.querySelector('.hero__content');
-const heroTitle = document.querySelector('.hero__title');
 const description = document.querySelector('.hero__desc');
 const menuLink = document.querySelector('.nav__link');
-const nav = document.querySelector('.nav');
-const menuToggle = document.querySelector('.nav__toggle');
-const primaryMenu = document.querySelector('#primary-menu');
-const desktopQuery = window.matchMedia('(min-width: 769px)');
+
 const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+const desktopQuery = window.matchMedia('(min-width: 769px)');
 const slides = Array.from(document.querySelectorAll('.hero__slide'));
 const paginationButtons = Array.from(document.querySelectorAll('.hero__pagination-button'));
 const carouselInterval = 6000;
@@ -986,39 +1394,113 @@ document.addEventListener('visibilitychange', startCarousel);
 reducedMotionQuery.addEventListener('change', startCarousel);
 startCarousel();
 
-function setMenuOpen(open, returnFocus = false) {
-  nav.classList.toggle('is-open', open);
-  primaryMenu.classList.toggle('is-open', open);
-  document.body.classList.toggle('menu-open', open);
-  menuToggle.setAttribute('aria-expanded', String(open));
-  menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
 
-  if (!open && returnFocus) menuToggle.focus();
+const servicesSection = document.querySelector('.services');
+const serviceImage = document.querySelector('.services__image');
+const serviceButtons = Array.from(document.querySelectorAll('.services__link'));
+let activeServiceButton = serviceButtons.find(button => button.classList.contains('is-active'));
+let serviceImageRequest = 0;
+
+function setActiveService(button) {
+  if (!button || button === activeServiceButton) return;
+
+  activeServiceButton = button;
+  const imageRequest = ++serviceImageRequest;
+  serviceButtons.forEach(serviceButton => {
+    const isActive = serviceButton === button;
+    serviceButton.classList.toggle('is-active', isActive);
+    serviceButton.setAttribute('aria-pressed', String(isActive));
+  });
+
+  const imageSource = button.dataset.serviceImage;
+  const imageAlt = button.dataset.serviceAlt;
+  if (serviceImage.getAttribute('src') === imageSource) {
+    serviceImage.alt = imageAlt;
+    serviceImage.classList.remove('is-changing');
+    return;
+  }
+
+  serviceImage.classList.add('is-changing');
+  const nextImage = new Image();
+  nextImage.onload = () => {
+    if (imageRequest !== serviceImageRequest) return;
+    serviceImage.src = imageSource;
+    serviceImage.alt = imageAlt;
+    serviceImage.classList.remove('is-changing');
+  };
+  nextImage.onerror = () => {
+    if (imageRequest !== serviceImageRequest) return;
+    console.error(`Unable to load services preview image: ${imageSource}`);
+    serviceImage.classList.remove('is-changing');
+  };
+  nextImage.src = imageSource;
 }
 
-menuToggle.addEventListener('click', () => {
-  setMenuOpen(menuToggle.getAttribute('aria-expanded') !== 'true');
+serviceButtons.forEach(button => {
+  button.addEventListener('pointerenter', () => setActiveService(button));
+  button.addEventListener('focus', () => setActiveService(button));
+  button.addEventListener('click', () => setActiveService(button));
 });
 
-primaryMenu.addEventListener('click', event => {
-  if (event.target.closest('a')) setMenuOpen(false);
-});
+function updateServicePreviewVisibility() {
+  const sectionBounds = servicesSection.getBoundingClientRect();
+  const previewTrigger = serviceButtons[3];
+  const triggerBounds = previewTrigger.getBoundingClientRect();
+  const isInServices = sectionBounds.bottom > window.innerHeight * 0.75
+    && sectionBounds.top < window.innerHeight;
+  const hasReachedTrigger = triggerBounds.top <= window.innerHeight * 0.6;
+  servicesSection.classList.toggle('is-preview-visible', isInServices && hasReachedTrigger);
+}
 
-document.addEventListener('click', event => {
-  if (menuToggle.getAttribute('aria-expanded') === 'true' && !nav.contains(event.target)) {
-    setMenuOpen(false);
-  }
-});
+function updateServiceOnScroll() {
+  updateServicePreviewVisibility();
+  const viewportCenter = window.innerHeight / 2;
+  let nearestButton;
+  let nearestDistance = Infinity;
 
-document.addEventListener('keydown', event => {
-  if (event.key === 'Escape' && menuToggle.getAttribute('aria-expanded') === 'true') {
-    setMenuOpen(false, true);
-  }
-});
+  serviceButtons.forEach(button => {
+    const bounds = button.getBoundingClientRect();
+    if (bounds.bottom <= 0 || bounds.top >= window.innerHeight) return;
 
-desktopQuery.addEventListener('change', event => {
-  if (event.matches) setMenuOpen(false);
-});
+    const buttonCenter = bounds.top + bounds.height / 2;
+    const distance = Math.abs(buttonCenter - viewportCenter);
+    if (distance < nearestDistance) {
+      nearestButton = button;
+      nearestDistance = distance;
+    }
+  });
+
+  if (nearestButton) setActiveService(nearestButton);
+}
+
+window.addEventListener('scroll', updateServiceOnScroll, { passive: true });
+window.addEventListener('resize', updateServiceOnScroll);
+
+const servicesDesktopQuery = window.matchMedia('(min-width: 769px)');
+
+function measureServiceCentering() {
+  serviceButtons.forEach((button, index) => {
+    button.style.setProperty('--i', index);
+  });
+  if (!servicesDesktopQuery.matches) return;
+  const pageCenter = document.documentElement.clientWidth / 2;
+  const listLeft = serviceButtons[0].closest('.services__list').getBoundingClientRect().left;
+  serviceButtons.forEach(button => {
+    button.style.setProperty('--center-shift', `${pageCenter - (listLeft + button.offsetWidth / 2)}px`);
+  });
+}
+
+function updateServicesExpanded() {
+  const listTop = serviceButtons[0].getBoundingClientRect().top;
+  const expanded = !servicesDesktopQuery.matches || listTop <= window.innerHeight * 0.4;
+  servicesSection.classList.toggle('is-expanded', expanded);
+}
+
+window.addEventListener('scroll', updateServicesExpanded, { passive: true });
+window.addEventListener('resize', () => { measureServiceCentering(); updateServicesExpanded(); });
+measureServiceCentering();
+updateServicesExpanded();
+updateServiceOnScroll();
 
 function getTextRight(element) {
   const range = document.createRange();
@@ -1031,18 +1513,13 @@ function updateHeroLayout() {
   description.style.setProperty('--desc-offset', '0px');
   if (!desktopQuery.matches) return;
 
-  const descriptionRight = getTextRight(description);
+  heroContent.classList.add('is-stacked');
+  const menuItem = menuLink.closest('li');
+  const menuTransform = menuItem.style.transform;
+  menuItem.style.transform = 'none';
   const menuRight = getTextRight(menuLink);
-  description.style.setProperty('--desc-offset', `${menuRight - descriptionRight}px`);
-
-  const titleRight = getTextRight(heroTitle);
-  const descriptionLeft = description.getBoundingClientRect().left;
-  const minimumGap = parseFloat(getComputedStyle(heroContent).gap) || 0;
-
-  if (titleRight + minimumGap > descriptionLeft) {
-    heroContent.classList.add('is-stacked');
-    description.style.setProperty('--desc-offset', '0px');
-  }
+  menuItem.style.transform = menuTransform;
+  description.style.setProperty('--desc-offset', `${menuRight - getTextRight(description)}px`);
 }
 
 function scheduleHeroLayout() {
